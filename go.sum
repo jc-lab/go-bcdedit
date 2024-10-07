@@ -1,0 +1,9 @@
+github.com/gabriel-samfira/go-hivex v0.0.0-20190725123041-b40bc95a7ced h1:QGy2AdPMyJWF1pI/GaAxpEY0qIFn/ekrimYrucQeNNk=
+github.com/gabriel-samfira/go-hivex v0.0.0-20190725123041-b40bc95a7ced/go.mod h1:2uhxVfr/8oFRFnCQbpoSzKG+qCvKH3yVt8FPASfJO28=
+github.com/google/go-cmp v0.3.0/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMywk6iLU=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+golang.org/x/text v0.18.0 h1:XvMDiNzPAl0jr17s6W9lcaIhGUfUORdGCNsuLmPG224=
+golang.org/x/text v0.18.0/go.mod h1:BuEKDfySbSR4drPmRPG/7iBdf8hvFMuRexcpahXilzY=
+gotest.tools v2.2.0+incompatible/go.mod h1:DsYFclhRJ6vuDpmuTbkuFWG+y2sxOXAzmJt81HFBacw=
