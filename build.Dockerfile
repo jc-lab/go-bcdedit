@@ -14,7 +14,8 @@ RUN mkdir -p /build && \
     ./generator/generator.ml && \
     ./configure && \
     make && \
-    make check || (cat config.log && false)
+    make check || (cat config.log && false) && \
+    make install
 
 RUN mkdir -p /build/src /build/dist
 COPY . /build/src
