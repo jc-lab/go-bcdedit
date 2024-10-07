@@ -1,4 +1,4 @@
-FROM alpine:3.20 as builder
+FROM golang:1.22-alpine3.20 as builder
 
 RUN apk add \
     ca-certificates git ocaml gcc make automake autoconf pkgconfig m4 libtool \
@@ -14,7 +14,7 @@ RUN mkdir -p /build && \
     ./generator/generator.ml && \
     ./configure && \
     make && \
-    make check || (cat config.log && false) \
+    make check || (cat config.log && false)
 
 RUN mkdir -p /build/src /build/dist
 COPY . /build/src
