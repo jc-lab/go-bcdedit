@@ -19,12 +19,12 @@ type Bcdedit interface {
 func CreateStore(store string) (Bcdedit, error) {
 	err := os.WriteFile(store, bcdtemplate.EMPTY, 0644)
 	if err != nil {
-		return nil, errors.Wrap(err, "failed to create file")
+		return nil, errors.Wrap(err, "failed to create file '"+store+"'")
 	}
 
 	h, err := hivex.NewHivex(store, hivex.WRITE)
 	if err != nil {
-		return nil, errors.Wrap(err, "opening hive file")
+		return nil, errors.Wrap(err, "opening hive file '"+store+"'")
 	}
 
 	return NewWithHive(h, true)
@@ -37,7 +37,7 @@ func OpenStore(store string, writable bool) (Bcdedit, error) {
 	}
 	h, err := hivex.NewHivex(store, flags)
 	if err != nil {
-		return nil, errors.Wrap(err, "opening hive file")
+		return nil, errors.Wrap(err, "opening hive file '"+store+"'")
 	}
 
 	return NewWithHive(h, writable)

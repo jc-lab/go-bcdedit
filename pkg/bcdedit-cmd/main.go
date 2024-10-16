@@ -92,8 +92,8 @@ var commands = map[string]commandDefine{
 	// bcdedit /store BCD /set {ObjectId} --value-type RegSz --value "Hello"
 	// bcdedit /store BCD /set {ObjectId} --value-type RegMultiSz --value "First" --value "Second"
 	"set": {
-		Usage: "/set <id> --value-type <ValueType(e.g. RegSz)> --value-raw \"BASE64\"\n" +
-			"/set <id> --value-type <ValueType(e.g. RegMultiSz)> --value \"first\" --value \"second\"\n" +
+		Usage: "/set <id> <key> --value-type <ValueType(e.g. RegSz)> --value-raw \"BASE64\"\n" +
+			"/set <id> <key> --value-type <ValueType(e.g. RegMultiSz)> --value \"first\" --value \"second\"\n" +
 			"This command sets an entry option value in the boot configuration data store.",
 		Writable: 1,
 		Runner: func(flags *Flags, args []string, bcd go_bcdedit.Bcdedit) error {
@@ -130,7 +130,7 @@ func Main(args []string) {
 
 	var fixedArgs []string
 	for _, s := range args[1:] {
-		if strings.HasPrefix(s, "/") {
+		if strings.Count(s, "/") == 1 && strings.HasPrefix(s, "/") {
 			s = "--" + s[1:]
 		}
 		fixedArgs = append(fixedArgs, s)
