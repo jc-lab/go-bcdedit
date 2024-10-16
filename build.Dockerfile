@@ -1,4 +1,6 @@
 FROM golang:1.22-alpine3.20 as builder
+# MUST USE alpine
+# glibc need gconv files
 
 RUN apk add \
     ca-certificates git ocaml gcc make automake autoconf pkgconfig m4 libtool \
