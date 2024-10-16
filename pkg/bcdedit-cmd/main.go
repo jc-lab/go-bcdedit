@@ -88,12 +88,12 @@ var commands = map[string]commandDefine{
 		},
 	},
 
-	// bcdedit /store BCD /set {ObjectId} --value-type RegSz --value-raw "AAAA"
-	// bcdedit /store BCD /set {ObjectId} --value-type RegSz --value "Hello"
-	// bcdedit /store BCD /set {ObjectId} --value-type RegMultiSz --value "First" --value "Second"
+	// bcdedit /store BCD /set {ObjectId} --type RegSz --raw "AAAA"
+	// bcdedit /store BCD /set {ObjectId} --type RegSz --value "Hello"
+	// bcdedit /store BCD /set {ObjectId} --type RegMultiSz --value "First" --value "Second"
 	"set": {
-		Usage: "/set <id> <key> --value-type <ValueType(e.g. RegSz)> --value-raw \"BASE64\"\n" +
-			"/set <id> <key> --value-type <ValueType(e.g. RegMultiSz)> --value \"first\" --value \"second\"\n" +
+		Usage: "/set <id> <key> --type <ValueType(e.g. RegSz)> --raw \"BASE64\"\n" +
+			"/set <id> <key> --type <ValueType(e.g. RegMultiSz)> --value \"first\" --value \"second\"\n" +
 			"This command sets an entry option value in the boot configuration data store.",
 		Writable: 1,
 		Runner: func(flags *Flags, args []string, bcd go_bcdedit.Bcdedit) error {
